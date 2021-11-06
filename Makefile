@@ -1,16 +1,16 @@
-CFLAGS = -g -Wall
+CFLAGS = -g -Wall -Wreturn-type
 CC = g++
 
 all: main
 
-main: main.o DoublyLinkedList.o
-	$(CC) $(CFLAGS) main.o DoublyLinkedList.o -o main
+main: main.o BinaryTree.o
+	$(CC) $(CFLAGS) main.o BinaryTree.o -o main
 
 main.o : main.cpp
 	$(CC) -c main.cpp
 
-DoubleLinkedList.o : DoublyLinkedList.cpp DoublyLinkedList.h
-	$(CC) -c DoublyLinkedList.cpp
+BinaryTree.o : BinaryTree.cpp BinaryTree.h
+	$(CC) -c BinaryTree.cpp
 
 clean:
 	-rm -f core *.o
